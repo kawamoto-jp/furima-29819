@@ -11,15 +11,13 @@
 | first_name         | string  | null: false |
 | last_name_reading  | string  | null: false |
 | first_name_reading | string  | null: false |
-| birthday_yaer      | integer | null: false |
-| birthday_month     | integer | null: false |
-| birthday_day       | integer | null: false |
-
+| birthday           | date    | null: false |
 
 ### Association
 
 - has_many :items
 - has_many :buyings
+
 
 ## items テーブル
 
@@ -40,6 +38,7 @@
 - belongs_to :user
 - has_one :buying
 
+
 ## buyings テーブル
 
 | Column | Type       | Options                        |
@@ -47,12 +46,12 @@
 | user   | references | null: false, foreign_key: true |
 | item   | references | null: false, foreign_key: true |
 
-
 ### Association
 
 - belongs_to :user
 - belongs_to :item
 - has_one :buyer
+
 
 ## buyers テーブル
 
