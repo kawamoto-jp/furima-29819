@@ -2,11 +2,19 @@
 
 ## users テーブル
 
-| Column   | Type   | Options     |
-| -------- | ------ | ----------- |
-| name     | string | null: false |
-| email    | string | null: false |
-| password | string | null: false |
+| Column             | Type    | Options     |
+| ------------------ | ------- | ----------- |
+| nick_name          | string  | null: false |
+| email              | string  | null: false |
+| password           | string  | null: false |
+| last_name          | string  | null: false |
+| first_name         | string  | null: false |
+| last_name_reading  | string  | null: false |
+| first_name_reading | string  | null: false |
+| birthday_yaer      | integer | null: false |
+| birthday_month     | integer | null: false |
+| birthday_day       | integer | null: false |
+
 
 ### Association
 
@@ -15,18 +23,17 @@
 
 ## items テーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| item_name     | string     | null: false                    |
-| price         | string     | null: false                    |
-| image         | string     | null: false                    |
-| text          | string     | null: false                    |
-| category      | string     | null: false                    |
-| status        | string     | null: false                    |
-| delivery_fee  | string     | null: false                    |
-| area          | string     | null: false                    |
-| delivery_days | string     | null: false                    |
-| user          | references | null: false, foreign_key: true |
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| name             | string     | null: false                    |
+| price            | integer    | null: false                    |
+| text             | text       | null: false                    |
+| category_id      | intenger   | null: false                    |
+| status_id        | intenger   | null: false                    |
+| delivery_fee_id  | intenger   | null: false                    |
+| area_id          | intenger   | null: false                    |
+| delivery_days_id | intenger   | null: false                    |
+| user             | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -47,21 +54,17 @@
 - belongs_to :item
 - has_one :buyer
 
-## buyer テーブル
+## buyers テーブル
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
-| card_number     | string     | null: false                    |
-| expiration_date | string     | null: false                    |
-| security_code   | string     | null: false                    |
 | postal_code     | string     | null: false                    |
-| prefectures     | string     | null: false                    |
+| prefectures_id  | integer    | null: false                    |
 | city            | string     | null: false                    |
 | address         | string     | null: false                    |
-| building_name   | string     | null: false                    |
+| building_name   | string     |                                |
 | tel             | string     | null: false                    |
-| user            | references | null: false, foreign_key: true |
-| item            | references | null: false, foreign_key: true |
+| buying          | references | null: false, foreign_key: true |
 
 ### Association
 
