@@ -9,25 +9,6 @@ describe User do
       it "全ての項目が埋まっていること" do
         expect(@user).to be_valid
       end
-      # it "メールアドレスは半角英数字で、@と.を含み、@の後ろに必ず.が一つ以上必要であること" do
-      #   @user.email = "a.a@a.a.jp"
-      #   expect(@user).to be_valid
-      # end
-      # it "パスワードは半角英数字で6文字以上、かつ英数字混合であること、かつパスワードは確認用を含めて2回入力すること" do
-      #   @user.password = "aaaa111"
-      #   @user.password_confirmation = "aaaa111"
-      #   expect(@user).to be_valid
-      # end
-      # it "ユーザー本名は全角（漢字・ひらがな・カタカナ）で入力させること" do
-      #   @user.last_name = "金子"
-      #   @user.first_name = "守"
-      #   expect(@user).to be_valid
-      # end
-      # it "ユーザー本名のフリガナは全角（カタカナ）で入力させること" do
-      #   @user.last_name_reading = "カネコ"
-      #   @user.first_name_reading = "マモル"
-      #   expect(@user).to be_valid
-      # end
     end
 
     context "新規登録がうまくいかないとき" do
