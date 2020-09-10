@@ -26,11 +26,11 @@
 | name             | string     | null: false                    |
 | price            | integer    | null: false                    |
 | text             | text       | null: false                    |
-| category_id      | intenger   | null: false                    |
-| status_id        | intenger   | null: false                    |
-| delivery_fee_id  | intenger   | null: false                    |
-| area_id          | intenger   | null: false                    |
-| delivery_days_id | intenger   | null: false                    |
+| category_id      | integer   | null: false                    |
+| status_id        | integer   | null: false                    |
+| delivery_fee_id  | integer   | null: false                    |
+| area_id          | integer   | null: false                    |
+| delivery_days_id | integer   | null: false                    |
 | user             | references | null: false, foreign_key: true |
 
 ### Association
