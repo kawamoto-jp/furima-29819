@@ -11,5 +11,3 @@ FactoryBot.define do
     birthday              {"1995-04-19"}
   end
 end
-
-# Faker::Internet.password(min_length: 6)
