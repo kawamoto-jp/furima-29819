@@ -29,3 +29,4 @@ class Item < ApplicationRecord
     validates :delivery_days_id
   end
 end
+
