@@ -15,8 +15,7 @@ describe Item do
       it "画像が選択されていないとき" do
         @item.image = nil
         @item.valid?
-        binding.pry
-        expect(@user.errors.full_messages).to include("Image can't be blank")
+        expect(@item.errors.full_messages).to include("Image can't be blank")
       end
       it "商品名が空のとき" do
         @item.name = ""
