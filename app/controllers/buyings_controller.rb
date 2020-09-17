@@ -1,9 +1,8 @@
 class BuyingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :finding
+  before_action :finding, only: [:index, :create]
 
   def index
-    finding
     if current_user.id == @item.user.id
       redirect_to root_path
     elsif @item.buying.present? 
@@ -14,7 +13,6 @@ class BuyingsController < ApplicationController
   end
 
   def create
-    finding
     @buying = BuyingBuyer.new(buying_params)
     if @buying.valid? && @buying.save
       pay_item
