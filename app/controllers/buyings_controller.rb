@@ -1,7 +1,15 @@
 class BuyingsController < ApplicationController
+  before_action :authenticate_user!
+  
 
   def index
     @item = Item.find(params[:item_id])
+    if current_user.id == @item.user.id
+      redirect_to root_path
+    elsif @item.buying.present? 
+      redirect_to root_path
+    end
+
     @buying = BuyingBuyer.new
   end
 
@@ -32,4 +40,5 @@ class BuyingsController < ApplicationController
       currency:'jpy'                 # 通貨の種類(日本円)
     )
   end
+
 end
