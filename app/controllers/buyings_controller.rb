@@ -1,9 +1,9 @@
 class BuyingsController < ApplicationController
   before_action :authenticate_user!
-  
+  before_action :finding
 
   def index
-    @item = Item.find(params[:item_id])
+    finding
     if current_user.id == @item.user.id
       redirect_to root_path
     elsif @item.buying.present? 
@@ -14,11 +14,10 @@ class BuyingsController < ApplicationController
   end
 
   def create
-    @item = Item.find(params[:item_id])
+    finding
     @buying = BuyingBuyer.new(buying_params)
-    if @buying.valid?
+    if @buying.valid? && @buying.save
       pay_item
-      @buying.save
       return redirect_to root_path
     else
       render 'index'
@@ -39,6 +38,10 @@ class BuyingsController < ApplicationController
       card: buying_params[:token],    # カードトークン
       currency:'jpy'                 # 通貨の種類(日本円)
     )
+  end
+
+  def finding
+    @item = Item.find(params[:item_id])
   end
 
 end
