@@ -8,7 +8,7 @@ class BuyingBuyer
     validates :prefectures_id, numericality: { other_than: 1 }
     validates :city, format: { with: /\A[ぁ-んァ-ン一-龥]/ }
     validates :address
-    validates :tel, format: { with: /\A[a-zA-Z0-9]+\z/ }
+    validates :tel, format: { with: /\A\d{10,11}\z/ }
     validates :user_id
     validates :item_id
   end
